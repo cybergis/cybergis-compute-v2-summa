@@ -1,0 +1,3 @@
+# single proecess
+
+print("setup")
