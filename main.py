@@ -44,6 +44,9 @@ new_instance_path = os.path.join(workers_folder_path, instance + "_{}".format(ra
 os.system("cp -rf {} {}".format(instance_path, new_instance_path))
 # each process to call install.sh to localize SUMMA model
 subprocess.run(
+    ["chmod", "+x", "./installTestCases_local.sh"], cwd=new_instance_path,
+)
+subprocess.run(
     ["./installTestCases_local.sh"], cwd=new_instance_path,
 )
 json_path = os.path.join(new_instance_path, "summa_options.json")
