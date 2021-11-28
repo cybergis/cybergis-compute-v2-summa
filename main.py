@@ -72,7 +72,7 @@ print("{}/{}: {}".format(rank, size, str(config_pair_list)))
 if rank == 0 and (not ensemble_flag):
     config_pair_list = [("_single_run", {})]
 # file manager path
-file_manager = os.path.join(new_instance_path, "$file_manager_rel_path")
+file_manager = os.path.join(new_instance_path, "settings/file_manager.txt")
 print("API submitted file_manager {}".format(file_manager))
 executable = "/usr/bin/summa.exe"
 #if len(config_pair_list) == 0:
