@@ -97,6 +97,7 @@ for config_pair in config_pair_list:
         ss.apply_config(config)
         # change output folder
         ss.manager["outputPath"].value = ss.manager["outputPath"].value.replace(new_instance_path, os.environ["result_folder"])
+        os.system("mkdir -p {}".format(ss.manager["outputPath"].value))
         # write configs in mem to disk
         ss.manager.write()
         # run model
