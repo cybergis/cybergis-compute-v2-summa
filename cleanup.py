@@ -17,6 +17,8 @@ instance_path = data_path
 result_folder_path = os.environ["result_folder"]
 # check output directory
 output_path = os.path.join(result_folder_path, "output")
+if not os.path.exists(os.path.join(output_path, 'merged_day')):
+    os.makedirs(os.path.join(output_path, 'merged_day'))
 truth_path = os.path.join(output_path, "truth")
 def sort_nc_files(folder_path):
     name_list = os.listdir(folder_path)
@@ -40,8 +42,6 @@ ens_decisions = []
 for f in sorted_list:
     ens_decisions.append(f.split("_")[-2])
 constant_vars= ['airpres','airtemp','LWRadAtm','pptrate','spechum','SWRadAtm','windspd']
-if not os.path.exists(os.path.join(output_path, 'merged_day')):
-    os.makedirs(os.path.join(output_path, 'merged_day'))
 for v in constant_vars:
     all_merged = xr.concat(all_ds[i:i+int(len(sorted_list)/7)], pd.Index(ens_decisions[i:i+int(len(sorted_list)/7)], name="decision"))
     merged_constant_path = os.path.join(output_path, 'merged_day/NLDASconstant_' + v +'_configs_latin.nc')
