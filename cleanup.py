@@ -9,7 +9,7 @@ import pandas as pd
 data_path = os.environ["data_folder"]
 regress_folder_path = os.path.join(data_path, "output/regress_data")
 if not os.path.isdir(regress_folder_path):
-  exit()
+    exit()
   
 print("postprocessing for CAMELS paper")
 #job_folder_path = "$singularity_job_folder_path"
