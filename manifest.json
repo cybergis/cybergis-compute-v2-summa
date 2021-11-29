@@ -22,24 +22,12 @@
                 "step": 1
             },
             "memory_per_cpu": {
-                "max": 4,
-                "min": 1,
-                "default_value": 1,
-                "step": 1,
-                "unit": "GB"
-            },
-            "partition": {
-                "type": "string_option",
-                "options": ["node", "sesempi"],
-                "default_value": "sesempi"
-            },
-            "num_of_node": {
                 "max": 10,
                 "min": 1,
-                "default_value": 1,
-                "step": 1 
-            }
-      
+                "default_value": 2,
+                "step": 1,
+                "unit": "GB"
+            }    
     },
     "require_upload_data": true,
     "param_rules": {
