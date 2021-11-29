@@ -143,5 +143,5 @@ for i,k in enumerate(choices):
         
     error_data.to_netcdf(os.path.join(save_regress_folder_path, 'error_data'+suffix[i]))
 import shutil
-if not keep_raw_outputs：
+if not keep_raw_outputs:
     shutil.move(os.path.join(result_folder_path, "output"), os.environ["executable_folder"])
