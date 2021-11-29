@@ -54,11 +54,13 @@ import xarray as xr
 import pandas as pd
 import numpy as np
 initialization_days = 365
+keep_raw_outputs = False
 try:
     regress_param_path = os.path.join(regress_folder_path, "regress_param.json")
     with open(regress_param_path) as f:
         regress_param = json.load(f)
         initialization_days = int(regress_param["initialization_days"])
+        keep_raw_outputs = regress_param.get("keep_raw_outputs", False)
 except Exception as ex:
     pass
 print("#################### initialization_days: {}".format(initialization_days))
@@ -77,6 +79,11 @@ def correlation(x,y,dims=None):#
 settings_folder = os.path.join(instance_path, "settings")
 attrib = xr.open_dataset(settings_folder+'/attributes.nc')
 the_hru = np.array(attrib['hruId'])
+
+#save file
+save_regress_folder_path = os.path.join(result_folder_path, "regress_data")
+if not os.path.exists(save_regress_folder_path):
+    os.makedirs(save_regress_folder_path)
 
 # Names for each set of problem complexities.
 choices = [1,0,0,0]
@@ -99,7 +106,7 @@ for i,k in enumerate(choices):
                                      coords=coords, dims=dims,
                                      name=s)
         
-# calculate summaries
+    # calculate summaries
     truth0_0 = sim_truth.drop_vars('hruId').load()
     for v in constant_vars:
         truth = truth0_0
@@ -134,8 +141,7 @@ for i,k in enumerate(choices):
     for s in comp_sim:
         error_data[s].loc[:,:,'truth','raw']  = truth[s].sum(dim='time') #this is raw data, not error      
         
-    #save file
-    save_regress_folder_path = os.path.join(result_folder_path, "regress_data")
-    if not os.path.exists(save_regress_folder_path):
-        os.makedirs(save_regress_folder_path)
     error_data.to_netcdf(os.path.join(save_regress_folder_path, 'error_data'+suffix[i]))
+import shutil
+if not keep_raw_outputs：
+    shutil.move(os.path.join(result_folder_path, "output"), os.environ["executable_folder"])
