@@ -1,6 +1,6 @@
 # single process
 
-print("cleanup")
+print("postprocessing for CAMELS paper")
 import os
 from natsort import natsorted
 import xarray as xr
@@ -10,9 +10,7 @@ data_path = os.environ["data_folder"]
 regress_folder_path = os.path.join(data_path, "output/regress_data")
 if not os.path.isdir(regress_folder_path):
     exit()
-  
-print("postprocessing for CAMELS paper")
-#job_folder_path = "$singularity_job_folder_path"
+
 instance_path = data_path
 result_folder_path = os.environ["result_folder"]
 # check output directory
@@ -140,4 +138,4 @@ for i,k in enumerate(choices):
     save_regress_folder_path = os.path.join(result_folder_path, "regress_data")
     if not os.path.exists(save_regress_folder_path):
         os.makedirs(save_regress_folder_path)
-    error_data.to_netcdf(os.path.join(save_regress_folder_path, 'error_data'+suffix[i])
+    error_data.to_netcdf(os.path.join(save_regress_folder_path, 'error_data'+suffix[i]))
