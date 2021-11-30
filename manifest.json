@@ -22,9 +22,9 @@
                 "step": 1
             },
             "memory_per_cpu": {
-                "max": 4,
+                "max": 2,
                 "min": 1,
-                "default_value": 2,
+                "default_value": 1,
                 "step": 1,
                 "unit": "GB"
             }    
