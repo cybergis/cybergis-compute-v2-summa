@@ -5,7 +5,7 @@
     "container": "summa-3.0.3",
     "pre_processing_stage": "python setup.py",
     "execution_stage": "python main.py",
-    "post_processing_stage": "python cleanup.py",
+    "post_processing_stage": "python postprocessing.py",
     "slurm_input_rules": {
    
            "time": {
@@ -16,7 +16,7 @@
                 "unit": "Hours"   
             },
             "num_of_task": {
-                "max": 100,
+                "max": 256,
                 "min": 1,
                 "default_value": 6,
                 "step": 1
@@ -29,20 +29,5 @@
                 "unit": "GB"
             }    
     },
-    "require_upload_data": true,
-    "param_rules": {
-        "input_a": {
-            "type": "integer",
-            "require": true,
-            "max": 100,
-            "min": 0,
-            "default_value": 50,
-            "step": 10
-        },
-        "input_b": {
-            "type": "string_option",
-            "options": ["foo", "bar"],
-            "default_value": "foo"
-        }
-    }
+    "require_upload_data": true
 }
