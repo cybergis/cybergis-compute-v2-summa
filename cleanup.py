@@ -142,6 +142,6 @@ for i,k in enumerate(choices):
         error_data[s].loc[:,:,'truth','raw']  = truth[s].sum(dim='time') #this is raw data, not error      
         
     error_data.to_netcdf(os.path.join(save_regress_folder_path, 'error_data'+suffix[i]))
-import shutil
 if not keep_raw_outputs:
-    shutil.move(os.path.join(result_folder_path, "output"), os.environ["executable_folder"])
+    print("moving raw ouputs out of download folder")
+    os.system("mv {} {}".format(os.path.join(result_folder_path, "output"), os.environ["executable_folder"]))
