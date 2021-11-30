@@ -2,7 +2,8 @@
    
 {
     "name": "SUMMA",
-   "description": "SUMMA or the Structure for Unifying Multiple Modeling Alternatives is a hydrologic modeling approach that is built on a common set of conservation equations and a common numerical solver, which together constitute the structural core of the model. Different modeling approaches can then be implemented within the structural core, enabling a controlled and systematic analysis of alternative modeling options, and providing insight for future model development.",
+    "description": "SUMMA or the Structure for Unifying Multiple Modeling Alternatives is a hydrologic modeling approach that is built on a common set of conservation equations and a common numerical solver, which together constitute the structural core of the model. Different modeling approaches can then be implemented within the structural core, enabling a controlled and systematic analysis of alternative modeling options, and providing insight for future model development.",
+    "estimated_runtime": "vary by model size, simulation period and configurations",
     "container": "summa-3.0.3",
     "pre_processing_stage": "python setup.py",
     "execution_stage": "python main.py",
