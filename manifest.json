@@ -2,6 +2,7 @@
    
 {
     "name": "SUMMA",
+   "description": "asdasdasd #ssss",
     "container": "summa-3.0.3",
     "pre_processing_stage": "python setup.py",
     "execution_stage": "python main.py",
