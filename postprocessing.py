@@ -1,4 +1,7 @@
-# single process
+# single process for postprocessing
+# currently postprecessing is only used for reproducing SUMMA CAMELS Paper to calcuate KGE and other indices
+# the script is only trigger if there is folder named "regress_data" inside "output" folder
+# not used for general summa ensemble modelling purpose
 
 print("postprocessing for CAMELS paper")
 import os
