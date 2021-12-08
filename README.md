@@ -6,7 +6,7 @@ Model developers who may want to contribute other models to CyberGIS-Compute can
 
 For end-users can refer to the exampe notebook here: Open demo notebook with CyberGIS-Jupyter for Water (CJW) <a href="http://go.illinois.edu/cybergis-jupyter-water/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcybergis%2Fcybergis-compute-v2-summa&urlpath=tree%2Fcybergis-compute-v2-summa%2Fsumma3_ensemble_hpc_compute-v2.ipynb&branch=main" target="_blank">HERE</a>
 
-## mainfest.json
+## manifest.json
 
 Supported HPCs are listed by key "supported_hpc" and default HPC by key "default_hpc";
 
