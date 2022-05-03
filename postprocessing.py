@@ -65,7 +65,9 @@ try:
         initialization_days = int(regress_param["initialization_days"])
         keep_raw_outputs = regress_param.get("keep_raw_outputs", False)
 except Exception as ex:
+    print(ex)
     pass
+print("initialization_days: {}; keep_raw_outputs: {}".format(str(initialization_days), str(keep_raw_outputs)))
 print("#################### initialization_days: {}".format(initialization_days))
 # Set forcings and create dictionaries, reordered forcings and output variables to match paper 
 constant_vars= ['pptrate','airtemp','spechum','SWRadAtm','LWRadAtm','windspd','airpres'] 
