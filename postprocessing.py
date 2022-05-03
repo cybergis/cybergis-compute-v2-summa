@@ -5,6 +5,7 @@
 
 print("postprocessing for CAMELS paper")
 import os
+import json
 from natsort import natsorted
 import xarray as xr
 import pandas as pd
