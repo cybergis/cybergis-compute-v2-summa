@@ -1,6 +1,6 @@
 import os
 SLURM_JOB_ID = os.environ.get("SLURM_JOB_ID", "")
-prinrt("SLURM_JOB_ID: {}".format(SLURM_JOB_ID))
+print("SLURM_JOB_ID: {}".format(SLURM_JOB_ID))
 
 
 # load libs
