@@ -1,3 +1,7 @@
+import os
+SLURM_JOB_ID = os.environ.get("SLURM_JOB_ID", "")
+prinrt("SLURM_JOB_ID: {}".format(SLURM_JOB_ID))
+
 # single process for postprocessing
 # currently postprecessing is only used for reproducing SUMMA CAMELS Paper to calcuate KGE and other indices
 # the script is only trigger if there is folder named "regress_data" inside "output" folder
